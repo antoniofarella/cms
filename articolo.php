@@ -80,7 +80,7 @@ if(strlen($action) == 0){
 
 
 //Form elimina articolo
-if($action == "elimina") { 
+if($onclick == "elimina") { 
     $intArticoloID = @$_GET['id']; 
     if(strlen($intArticoloID) > 0){   
         $strSQL = "DELETE FROM articolo WHERE id = $intArticoloID";
@@ -205,9 +205,9 @@ if($action == "aggiungi"){
 		</select><p>
 		<input type="submit" value="Inserisci Articolo">&nbsp;<input type="reset" value="Annulla Modifiche"> 
 		<?php echo
-		"<a href=\"index.php?page=articolo&action=elimina&id=$intArticoloID\">
+		"<button onclick=\"elimina\">
 		Elimina
-		</a>\n"
+		</button>\n"
 		?>
 	</form>
 	<?php
